@@ -34,6 +34,9 @@ public class GreetingControllerTests {
 	@Autowired
 	private MockMvc mockMvc;
 
+	// Given a user accesses the "/greeting" route
+	// When a user does not enter parameters
+	// Then a user gets a success status with a default message
 	@Test
 	public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
@@ -41,6 +44,9 @@ public class GreetingControllerTests {
 				.andExpect(jsonPath("$.content").value("Hello, World!"));
 	}
 
+	// Given a user accesses the "/greeting" route
+	// When a user enters parameters
+	// Then a user gets a success status with a custom message
 	@Test
 	public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 
